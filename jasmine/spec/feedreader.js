@@ -33,7 +33,7 @@ $(function() {
         it('allFeed has <URL> defined and not empty', function() {
             for (const feed of allFeeds) {
                 expect(feed.url).toBeDefined();
-                expect(feed.name).not.toBe('');
+                expect(feed.url).not.toBe('');
             }
         });
 
@@ -59,8 +59,8 @@ $(function() {
          * proper styling for hidding.
          */
         it('is hidden by default', function() {
-            //expect($('body').hasClass('menu-hidden')).toBe(true);
-            expect(bodyEl).toHaveClass('menu-hidden')
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+            //expect(bodyEl).toHaveClass('menu-hidden')
         });
 
          /**
@@ -70,11 +70,11 @@ $(function() {
         it('changes visibility when the menu icon is clicked', function(){
             const menuIcon = $('.menu-icon-link');
             menuIcon.trigger('click');
-            //expect($('body').hasClass('menu-hidden')).toBe(false);
-            expect(bodyEl).not.toHaveClass('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+            //expect(bodyEl).not.toHaveClass('menu-hidden');
             menuIcon.trigger('click');
-            //expect($('body').hasClass('menu-hidden')).toBe(true);
-            expect(bodyEl).toHaveClass('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+            //expect(bodyEl).toHaveClass('menu-hidden');
         });
 
     });
